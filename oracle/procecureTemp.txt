@@ -1,0 +1,17 @@
+create global TEMPORARY TABLE tbclientetemp
+(
+Nome varchar(100),
+CNPJ varchar(50)
+)
+ON COMMIT DELETE ROWS;
+
+create or replace procedure up_clienteteste(
+p_nome in varchar %type,
+p_cnpj in varchar %type
+)
+is
+begin
+
+insert into tbclientetemp values (p_nome,p_cnpj);
+
+end upclienteteste;

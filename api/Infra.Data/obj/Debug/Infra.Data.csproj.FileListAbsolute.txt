@@ -1,0 +1,2 @@
+C:\Estudo\.net\api+console\api\Infra.Data\obj\Debug\Infra.Data.csprojAssemblyReference.cache
+C:\Estudo\.net\api+console\api\Infra.Data\obj\Debug\Infra.Data.csproj.CoreCompileInputs.cache

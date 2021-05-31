@@ -1,0 +1,14 @@
+create table tbclienteteste(
+Codigo int not null,
+Nome varchar(100) not null,
+CNPJ varchar(50) not null,
+CONSTRAINT tbclientetemp_pk PRIMARY KEY (Codigo));
+
+CREATE UNIQUE INDEX tbclienteteste
+ON tbclienteteste(Codigo,Nome,CNPJ);
+
+CREATE SEQUENCE tbclientetest_seq
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+;

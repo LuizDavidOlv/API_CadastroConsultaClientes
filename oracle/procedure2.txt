@@ -1,0 +1,31 @@
+create or replace procedure up_clienteteste(
+p_nome in varchar %type,
+p_cnpj in varchar %type
+)
+is
+begin
+
+create TEMPORARY TABLE tbclientetemp
+(
+Codigo int not null,
+Nome varchar(100) not null,
+CNPJ varchar(50) not null,
+CONSTRAINT tbclientetemp_pk PRIMARY KEY (Codigo)
+)
+
+
+CREATE UNIQUE INDEX tbclientetemp
+ON tbclientetemp(Codigo,Nome,CNPJ);
+
+insert into tbclientetemp values (tbclienteteste_Sq.nextval,p_nome,p_cnpj);
+
+
+ON COMMIT DELETE ROWS;
+
+Exception
+  When others then
+    --rollback;
+    raise_application_error(-20001, 'Erro ao realizar Cadastro: ' || SQLERRM);
+  end;
+
+end upclienteteste;
