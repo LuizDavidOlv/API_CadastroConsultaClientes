@@ -1,0 +1,6 @@
+create global TEMPORARY TABLE tbclientetemp
+(
+Nome varchar(100),
+CNPJ varchar(50)
+)
+ON COMMIT DELETE ROWS;
